@@ -1,5 +1,5 @@
+- No distracted use use technology (e.g. phones away) during all team meetings (CSC305 Basic Policy).
 - Decisions (How will they be made? Majority, consensus, other?)
-  - 
 - Attendance (What are your expectations for the frequency and type of attendance?; What are legitimate reasons for missing? - What do missing members have to do to make up for missed meetings)
 - Assignments (How will assignments be made? How will the group deal with members who do not complete (or poorly complete assignments?)
 - Participation (How will you communicate and share information; How will you ensure full participation of everyone? How will you honor member strengths and interests)?
