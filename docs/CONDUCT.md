@@ -1,1 +1,10 @@
--- hello world
+- Decisions (How will they be made? Majority, consensus, other?)
+  - 
+- Attendance (What are your expectations for the frequency and type of attendance?; What are legitimate reasons for missing? - What do missing members have to do to make up for missed meetings)
+- Assignments (How will assignments be made? How will the group deal with members who do not complete (or poorly complete assignments?)
+- Participation (How will you communicate and share information; How will you ensure full participation of everyone? How will you honor member strengths and interests)?
+- Meeting Times and Locations/Mediums (How will you decide on locations and times that suit all members)?
+- Agenda and Minutes /Notes (Who will take them how will they be shared?)
+- Promptness (What do you expect and how will you handle lateness?)
+- Conversational Courtesies (How will the team encourage and reinforce active listening, sharing of the airtime, tangents, respectful dialogue, etc )
+- Enforcement/ Feedback (How will the team enforce its own rules? How do individuals prefer to give and receive feedback?)
