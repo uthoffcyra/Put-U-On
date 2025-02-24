@@ -1,1 +1,1 @@
--- hello world
+- No distracted use use technology (e.g. phones away) during all team meetings (CSC305 Basic Policy).
