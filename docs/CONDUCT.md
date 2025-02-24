@@ -1,10 +1,31 @@
 - No distracted use use technology (e.g. phones away) during all team meetings (CSC305 Basic Policy).
 - Decisions (How will they be made? Majority, consensus, other?)
-- Attendance (What are your expectations for the frequency and type of attendance?; What are legitimate reasons for missing? - What do missing members have to do to make up for missed meetings)
+  - Majority rules voting system
+- Attendance (What are your expectations for the frequency and type of attendance?; What are legitimate reasons for missing What do missing members have to do to make up for missed meetings)
+  - Message group chat with updates when absent
+  - check meeting notes
+  - message scrum master 
 - Assignments (How will assignments be made? How will the group deal with members who do not complete (or poorly complete assignments?)
+  - Have a general map of our schedule, with deadlines and goals with specific dates
+  - Distribute tasks based on personal preferences
+  - Reach out to group members if falling behind on workload, to ensure it is still done
+  - split workload aswell
 - Participation (How will you communicate and share information; How will you ensure full participation of everyone? How will you honor member strengths and interests)?
+  - Remote meetings via facetime
+  - meet on campus
+  - during labs
 - Meeting Times and Locations/Mediums (How will you decide on locations and times that suit all members)?
+  - see Participation
+  - communicate in advance working times
+  - Initial Times:
+    - Tue/Thurs late afternoon
+    - weekends if needed
 - Agenda and Minutes /Notes (Who will take them how will they be shared?)
+  - take notes during team meetings
+  - use shared docs 
 - Promptness (What do you expect and how will you handle lateness?)
+  - Communicate with the team in advance if late.
+  - Try to finish tasks within general specified due dates
+  - distrubute missed work / bugs across team
 - Conversational Courtesies (How will the team encourage and reinforce active listening, sharing of the airtime, tangents, respectful dialogue, etc )
 - Enforcement/ Feedback (How will the team enforce its own rules? How do individuals prefer to give and receive feedback?)
