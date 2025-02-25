@@ -64,6 +64,6 @@ This Code of Conduct is adapted from the [Contributor Covenant](https://www.cont
 
 Cyra Uthoff
 
-![signature](https://github.com/uthoffcyra/Put-U-On/blob/main/Michael_sign.jpg)
+<img src="https://github.com/uthoffcyra/Put-U-On/blob/main/Michael_sign.jpg" alt="signature" width="300" height="200">
 
 Michael Nester
