@@ -62,3 +62,5 @@ This Code of Conduct is adapted from the [Contributor Covenant](https://www.cont
 
 ![signature](https://github.com/user-attachments/assets/26d13991-0ea7-4c70-80ed-9525ca2f8eff)
 Cyra Uthoff
+
+![signature]()
