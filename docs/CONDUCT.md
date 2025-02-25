@@ -60,5 +60,5 @@ Team leaders will use the following guidelines to determine appropriate conseque
 
 This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
 
-
-
+![signature](https://github.com/user-attachments/assets/26d13991-0ea7-4c70-80ed-9525ca2f8eff)
+Cyra Uthoff
