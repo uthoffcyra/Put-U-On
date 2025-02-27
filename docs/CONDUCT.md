@@ -70,7 +70,7 @@ Michael Nester
 
 ![Marcus](https://github.com/user-attachments/assets/62a4a113-07f6-4dd9-8986-81767c5377c5)
 
-Marcus [...]
+Marcus Diaz
 
 ![Omar](https://github.com/user-attachments/assets/757bca12-a82c-4259-9c56-70498de1b50c)
 
