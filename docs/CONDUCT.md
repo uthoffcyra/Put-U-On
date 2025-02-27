@@ -67,3 +67,15 @@ Cyra Uthoff
 <img src="https://github.com/uthoffcyra/Put-U-On/blob/main/Michael_sign.jpg" alt="signature" width="400" height="200">
 
 Michael Nester
+
+![Marcus](https://github.com/user-attachments/assets/62a4a113-07f6-4dd9-8986-81767c5377c5)
+
+Marcus [...]
+
+![Omar](https://github.com/user-attachments/assets/757bca12-a82c-4259-9c56-70498de1b50c)
+
+Omar [...]
+
+![Emily](https://github.com/user-attachments/assets/11a4a9e0-1abd-414b-b589-1b6ad767ea29)
+
+Emily [...]
