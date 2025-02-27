@@ -78,4 +78,4 @@ Omar [...]
 
 ![Emily](https://github.com/user-attachments/assets/11a4a9e0-1abd-414b-b589-1b6ad767ea29)
 
-Emily [...]
+Emily Bardsley
