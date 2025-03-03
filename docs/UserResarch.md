@@ -1,8 +1,4 @@
-- Observation 1:
-  - Observation Statement:
-  - Supporting Data:
-  - Team Action (if any):
-- Observation 2:
+- Cyra's Observation:
   - Observation Statement:
   - Supporting Data:
   - Team Action (if any):
