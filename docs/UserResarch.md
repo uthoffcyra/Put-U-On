@@ -16,3 +16,7 @@
   - Supporting Data: Many people reported that their current music app is recommending popular songs over and over even though they are not interested in it
   - Team Action (if any): Check to make sure our algorithm suggests a songs in perferred genre and only once
 
+- Michael's Observation:
+  - Observation Statement: The question asking how much control users want over the recommendations yielded varied results.
+  - Supporting Data: 45 percent of people voted 'Some intervention', and 53.3 percent voted for 'Customaizable features'
+  - Team Action (if any): Provide the option to change the level of automated recommendations, such as a slider bar or dropdown in settings for users to use. 
