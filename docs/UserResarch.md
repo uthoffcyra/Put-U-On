@@ -4,6 +4,7 @@
   - Team Action (if any): Focus primarily on paid memberships as the means of income for the product.
 
 - Marcus Diaz
-  - Observation Statement:
-  - Supporting Data:
-  - Team Action (if any):
+  - Observation Statement: people discover most their music on social media
+  - Supporting Data: tiktok and instagram combined with 63 votes
+  - Team Action (if any): grab music from such sites
+
