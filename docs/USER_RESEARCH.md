@@ -19,4 +19,9 @@
 - Michael's Observation:
   - Observation Statement: The question asking how much control users want over the recommendations yielded varied results.
   - Supporting Data: 45 percent of people voted 'Some intervention', and 53.3 percent voted for 'Customaizable features'
-  - Team Action (if any): Provide the option to change the level of automated recommendations, such as a slider bar or dropdown in settings for users to use. 
+  - Team Action (if any): Provide the option to change the level of automated recommendations, such as a slider bar or dropdown in settings for users to use.
+ 
+- Omar's Observation:
+  - Observation Statement: People wanted to know other people's reccomendations 
+  - Supporting Data: to the question What is something you would like on a music recommendation platform? we got answers: Other people’s opinions
+  - Team Action (if any): Add a feed for only other people's reccomendation or songs that they liked 
