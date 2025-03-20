@@ -1,26 +1,26 @@
 [Link to HEART Framework]()
 
-## H
+## Happiness
 
 - Metric Name:
 - How to Collect:
 
-## E
+## Engagement
 
 - Metric Name:
 - How to Collect:
 
-## A
+## Adoption
 
 - Metric Name:
 - How to Collect:
 
-## R
+## Retention
 
 - Metric Name:
 - How to Collect:
 
-## T
+## Task Success
 
 - Metric Name:
 - How to Collect:
