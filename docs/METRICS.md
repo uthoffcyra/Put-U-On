@@ -17,8 +17,8 @@
 
 ## Retention
 
-- Metric Name:
-- How to Collect:
+- Metric Name: Retention (R)
+- How to Collect: measure how many users use the app through a month, how many return, how many like songs, and how many people engage with notifications
 
 ## Task Success
 
