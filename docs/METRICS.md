@@ -7,8 +7,8 @@
 
 ## Engagement
 
-- Metric Name:
-- How to Collect:
+- Metric Name: Daily Active Users (DAU)
+- How to Collect: Use built in active users collection with Google Analytics for Firebase.
 
 ## Adoption
 
