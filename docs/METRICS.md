@@ -12,8 +12,8 @@
 
 ## Adoption
 
-- Metric Name:
-- How to Collect:
+- Metric Name: Adoption Rate
+- How to Collect: Track the New Users metric in firebase to see how many first-time users opened the app.
 
 ## Retention
 
