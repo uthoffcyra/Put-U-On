@@ -2,8 +2,8 @@
 
 ## Happiness
 
-- Metric Name:
-- How to Collect:
+- Metric Name: Net Promoter Score (NPS)
+- How to Collect: At some point within the app, prompt the user to optionally rate their experience out of 10. Negative reviews are generally scored 0-6, and positive scores are 7-10.
 
 ## Engagement
 
