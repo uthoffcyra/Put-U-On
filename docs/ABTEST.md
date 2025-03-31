@@ -63,3 +63,37 @@ We will run an A/B test comparing two versions of the NPS rating interface:
 Variation A (Control): Traditional slider-based NPS survey.
 
 Variation B (Test Group): Clickable number boxes replacing the slider.
+
+### Marcus's Proposal
+A/B Test Name:
+Onboarding Progress Bar Visibility
+
+### User Story Number:
+US-2 Adoption
+
+### Hypothesis:
+Showing a visible progress bar during onboarding will increase adoption by giving users a clearer sense of how many steps are left, reducing perceived effort and abandonment. Users are more likely to complete onboarding when they understand their progress. We hypothesize that a visible progress bar will lead to a higher onboarding completion rate compared to no progress bar.
+
+### Experiment:
+We’ll run an A/B test using Firebase Remote Config and Firebase Analytics.
+
+Audience: 100% of new users split evenly between control and variant groups (50/50 split).
+
+Control (A): Existing onboarding flow without a visible progress bar.
+
+Variant (B): Onboarding flow with a visible progress bar at the top of each screen, showing total steps (e.g., “Step 2 of 4”).
+
+We’ll track:
+
+Onboarding completion rate
+
+Time spent on each step
+
+Drop-off points per step
+
+Adoption metrics (users who complete onboarding and perform at least one key action, such as adding a profile or linking a service)
+
+### Variant: Onboarding screens with a visible progress bar (e.g., “Step 2 of 4”) shown at the top.
+
+### Variations:
+We can test different styles of progress indicators (linear bar, step dots, or text only). Future variations might explore how labeling each step affects completion rates.
