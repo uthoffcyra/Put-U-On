@@ -18,7 +18,13 @@ Some variations we could test different colors for the background of the login/s
 ## Cyra's Proposal
 
 ### A/B Test Name:
+User Settings Layout Experiment
 ### User Story Number:
+US-5 User Settings
 ### Hypothesis:
+We believe that reorganizing the layout of the User Settings tab will improve user engagement by reducing cognitive load and putting more important tasks at the top of their preferences. Buttons should also be reflective of what pages to go to and what they do. A well-organized settings screen makes it easier for users to navigate, find, and adjust their preferences quickly. When the layout is intuitive, users don’t have to waste time searching for specific options, which leads to a smoother, more positive experience. If the settings are disorganized or overwhelming, it can cause frustration and lead users to abandon or avoid changing settings altogether.
 ### Experiment:
+- Current Layout (Control): The current settings layout with standard buttons.
+- Simplified Layout (Variant): A new layout that consolidates the most important settings into a single scrollable screen with categorized cards for each section (e.g., Account, Spotify, Notifications).
 ### Variations:
+Some variations could be in the order of these tasks, or a search feature that could go between them. Letting users easily navigate settings reduces frustration and can increases user happiness. 
