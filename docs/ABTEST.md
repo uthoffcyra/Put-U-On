@@ -28,3 +28,18 @@ We believe that reorganizing the layout of the User Settings tab will improve us
 - Simplified Layout (Variant): A new layout that consolidates the most important settings into a single scrollable screen with categorized cards for each section (e.g., Account, Spotify, Notifications).
 ### Variations:
 Some variations could be in the order of these tasks, or a search feature that could go between them. Letting users easily navigate settings reduces frustration and can increases user happiness. 
+
+
+## Emily's Proposal
+
+### A/B Test Name: 
+Spotify Log In Button Color Change
+### User Story Number:
+US1 - User Account Creation
+### Hypothesis:
+Changing the Spotify login button color from green to orange will increase the login conversion rate by making the button stand out more and drawing users' attention. If the orange button outperforms the green button in conversion rate, it suggests that the color change positively impacts user engagement.
+### Experiment:
+The experiment will involve two groups: a control group (A) that sees the existing green Spotify login button and a variant group (B) that sees an orange version of the button. Users will be randomly assigned to either group to ensure unbiased results. The test will run for a set duration, such as two to four weeks, to collect a statistically significant amount of data. The primary success metric will be the login conversion rate, measured as the percentage of users who click the button and successfully log in, while a secondary metric will be the click-through rate (CTR) on the login button. Data collection will involve tracking the number of users exposed to each button color, along with the corresponding clicks and successful logins. The results will be analyzed using statistical significance testing, such as a chi-square test or t-test, to determine whether the orange button leads to a meaningful increase in logins compared to the green button. If the orange button significantly improves the conversion rate, it may be considered for permanent implementation; otherwise, the green button will be retained.
+### Variations:
+The experiment will have two variations: the control version, where users see the existing green Spotify login button, and the test version, where users see an orange login button.
+
