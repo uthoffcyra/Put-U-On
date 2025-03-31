@@ -53,8 +53,11 @@ US 5 - Net Promoter Score
 If users rate their experience using clickable number boxes instead of a slider, they will be more likely to complete the Net Promoter Score (NPS) survey and provide higher ratings due to reduced friction and better usability.
 ### Experiment:
 We will run an A/B test comparing two versions of the NPS rating interface:
-#-Version A (Control): Users select their rating (0–10) using a slider.
-#-Version B (Test Group): Users select their rating by clicking numbered boxes (0–10) instead of dragging a slider.
+
+-Version A (Control): Users select their rating (0–10) using a slider.
+
+-Version B (Test Group): Users select their rating by clicking numbered boxes (0–10) instead of dragging a slider.
+
 ### Variations
 Variation A (Control): Traditional slider-based NPS survey.
 Variation B (Test Group): Clickable number boxes replacing the slider.
