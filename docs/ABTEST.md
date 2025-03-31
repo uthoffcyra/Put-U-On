@@ -15,6 +15,10 @@ The experiment will involve creating an A/B test in firebase that contains two v
 ### Variations:
 Some variations we could test different colors for the background of the login/signup page. If, in one experiement, a color performs better than the other, we could then put that winning color against another color. We could continue this process to refine our results.
 
+## Cyra's Proposal
 
-
-
+### A/B Test Name:
+### User Story Number:
+### Hypothesis:
+### Experiment:
+### Variations:
