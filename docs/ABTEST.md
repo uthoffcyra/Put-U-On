@@ -59,5 +59,7 @@ We will run an A/B test comparing two versions of the NPS rating interface:
 -Version B (Test Group): Users select their rating by clicking numbered boxes (0–10) instead of dragging a slider.
 
 ### Variations
+
 Variation A (Control): Traditional slider-based NPS survey.
+
 Variation B (Test Group): Clickable number boxes replacing the slider.
