@@ -1,4 +1,4 @@
-# Put U On
+# music-player-library
 
 A new Flutter project.
 

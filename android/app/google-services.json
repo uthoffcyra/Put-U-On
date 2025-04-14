@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "562385796089",
+    "project_id": "put-u-on-v87ycz",
+    "storage_bucket": "put-u-on-v87ycz.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562385796089:android:e1bbf0753ed5db967f1b28",
+        "android_client_info": {
+          "package_name": "com.mycompany.putuon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6PVs1pOOWpHMCsSMRJGYC7-8O1riJYgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

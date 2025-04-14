@@ -1,4 +1,4 @@
-# Put U On
+# Spotify Library
 
 A new Flutter project.
 
