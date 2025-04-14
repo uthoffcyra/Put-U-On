@@ -55,6 +55,49 @@ void main() async {
     await tester.tap(find.byKey(const ValueKey('Button_6hz9')));
     expect(find.text('Connect Spotify'), findsOneWidget);
   });
+
+  testWidgets('US5 Unit Test', (WidgetTester tester) async {
+    _overrideOnError();
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'benuthoff@uri.edu', password: 'p4ssw0rd');
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => FFAppState(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => spotify_item_mwlatt_app_state.FFAppState(),
+        ),
+      ],
+      child: MyApp(
+        entryPage: UsersettingsWidget(),
+      ),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.tap(find.byKey(const ValueKey('Button_ykkm')));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+        find.byKey(const ValueKey('usernameInput_f2vp')), 'cyrafish');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle();
+    await tester.enterText(
+        find.byKey(const ValueKey('nameInput_jt4u')), 'Cyra');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle();
+    await tester.enterText(
+        find.byKey(const ValueKey('locationInput_24ux')), 'Providence');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('Button_i9r9')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byIcon(Icons.person));
+    await tester.pump(kDoubleTapMinTime);
+    await tester.tap(find.byIcon(Icons.person));
+    await tester.pumpAndSettle();
+    expect(find.text('Cyra'), findsWidgets);
+    expect(find.text('cyrafish'), findsWidgets);
+  });
 }
 
 // There are certain types of errors that can happen during tests but

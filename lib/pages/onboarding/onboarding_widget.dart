@@ -258,6 +258,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: ValueKey('usernameInput_f2vp'),
                                     controller:
                                         _model.usernameInputTextController,
                                     focusNode: _model.usernameInputFocusNode,
@@ -345,6 +346,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: ValueKey('nameInput_jt4u'),
                                     controller: _model.nameInputTextController,
                                     focusNode: _model.nameInputFocusNode,
                                     autofocus: false,
@@ -431,6 +433,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: ValueKey('locationInput_24ux'),
                                     controller:
                                         _model.locationInputTextController,
                                     focusNode: _model.locationInputFocusNode,
@@ -710,6 +713,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 child: Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: FFButtonWidget(
+                                    key: ValueKey('Button_i9r9'),
                                     onPressed: () async {
                                       logFirebaseEvent(
                                           'ONBOARDING_PAGE_SAVE_BTN_ON_TAP');

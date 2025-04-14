@@ -140,6 +140,7 @@ class _UsersettingsWidgetState extends State<UsersettingsWidget> {
                                 ),
                               ),
                               FFButtonWidget(
+                                key: ValueKey('Button_ykkm'),
                                 onPressed: () async {
                                   logFirebaseEvent(
                                       'USERSETTINGS_EDIT_PROFILE_BTN_ON_TAP');
