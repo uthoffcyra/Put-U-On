@@ -10,4 +10,4 @@
 [US4: Golden Path](https://docs.google.com/presentation/d/1OEJlxChNcbhNmMIzlBrriJTdJPkEOftOHTyz5z0hJZY/edit#slide=id.g349584dac9b_0_0)
 
 
-[US5: ](https://docs.google.com/presentation/d/1OEJlxChNcbhNmMIzlBrriJTdJPkEOftOHTyz5z0hJZY/edit#slide=id.g349584dac9b_0_0)
+[US5: User Settings](https://docs.google.com/presentation/d/1OEJlxChNcbhNmMIzlBrriJTdJPkEOftOHTyz5z0hJZY/edit#slide=id.g349584dac9b_0_0)
