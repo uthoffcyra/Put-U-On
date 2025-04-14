@@ -73,6 +73,18 @@ class FFAppState extends ChangeNotifier {
   set currentUserUid(String value) {
     _currentUserUid = value;
   }
+
+  String _spotifyAccessToken = '';
+  String get spotifyAccessToken => _spotifyAccessToken;
+  set spotifyAccessToken(String value) {
+    _spotifyAccessToken = value;
+  }
+
+  String _spotifyUserId = '';
+  String get spotifyUserId => _spotifyUserId;
+  set spotifyUserId(String value) {
+    _spotifyUserId = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

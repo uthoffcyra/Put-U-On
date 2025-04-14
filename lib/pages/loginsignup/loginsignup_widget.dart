@@ -586,6 +586,7 @@ class _LoginsignupWidgetState extends State<LoginsignupWidget>
                                     child: Container(
                                       width: double.infinity,
                                       child: TextFormField(
+                                        key: ValueKey('LoginEmailField_uhu5'),
                                         controller: _model
                                             .loginEmailFieldTextController,
                                         focusNode:
@@ -674,6 +675,8 @@ class _LoginsignupWidgetState extends State<LoginsignupWidget>
                                     child: Container(
                                       width: double.infinity,
                                       child: TextFormField(
+                                        key:
+                                            ValueKey('LoginPasswordField_ys4d'),
                                         controller: _model
                                             .loginPasswordFieldTextController,
                                         focusNode:
@@ -804,6 +807,7 @@ class _LoginsignupWidgetState extends State<LoginsignupWidget>
                                           ),
                                         ),
                                         FFButtonWidget(
+                                          key: ValueKey('Button_6hz9'),
                                           onPressed: () async {
                                             logFirebaseEvent(
                                                 'LOGINSIGNUP_PAGE_LOGIN_BTN_ON_TAP');

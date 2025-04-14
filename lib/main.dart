@@ -28,9 +28,9 @@ void main() async {
   spotify_item_mwlatt_library_values.FFLibraryValues().clientSecret =
       '865d2e11ba004eee8aeb9975c4003416';
   spotify_item_mwlatt_library_values.FFLibraryValues().redirectUrlWeb =
-      'https://accounts.spotify.com/authorize?client_id=f4e1a9bf37164211ac9e9f996375b60f&response_type=code&redirect_uri=http://localhost:8888/callback&scope=user-read-private user-read-email&state=ilikemusic';
+      'https://spotifycallback-nqeqw2nsyq-uc.a.run.app';
   spotify_item_mwlatt_library_values.FFLibraryValues().redirectUrlMobile =
-      'https://accounts.spotify.com/authorize?client_id=f4e1a9bf37164211ac9e9f996375b60f&response_type=code&redirect_uri=http://localhost:8888/callback&scope=user-read-private user-read-email&state=ilikemusic';
+      'https://spotifycallback-nqeqw2nsyq-uc.a.run.app';
   await initFirebase();
 
   final appState = FFAppState(); // Initialize FFAppState
@@ -56,12 +56,16 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key, this.entryPage});
+
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
 
   static _MyAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>()!;
+
+  final Widget? entryPage;
 }
 
 class MyAppScrollBehavior extends MaterialScrollBehavior {
@@ -100,7 +104,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
 
     _appStateNotifier = AppStateNotifier.instance;
-    _router = createRouter(_appStateNotifier);
+    _router = createRouter(_appStateNotifier, widget.entryPage);
     userStream = putUOnFirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);

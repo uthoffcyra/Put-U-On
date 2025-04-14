@@ -9,6 +9,7 @@ import '/index.dart';
 import 'package:spotify_item_mwlatt/app_state.dart'
     as spotify_item_mwlatt_app_state;
 import 'package:styled_divider/styled_divider.dart';
+import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -45,6 +46,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       logFirebaseEvent('ONBOARDING_PAGE_onboarding_ON_INIT_STATE');
+      logFirebaseEvent('onboarding_update_app_state');
+      FFAppState().spotifyUserId = currentUserUid;
+      safeSetState(() {});
       logFirebaseEvent('onboarding_set_form_field');
       safeSetState(() {
         _model.nameInputTextController?.text = currentUserDisplayName;
@@ -59,11 +63,6 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
         _model.locationInputTextController?.text =
             valueOrDefault(currentUserDocument?.location, '');
       });
-      if (!(FFAppState().spotifyToken == '')) {
-        logFirebaseEvent('onboarding_navigate_to');
-
-        context.pushNamed(GoldenPathWidget.routeName);
-      }
     });
 
     _model.usernameInputTextController ??= TextEditingController();
@@ -616,59 +615,6 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                               ].divide(SizedBox(height: 20.0)),
                             ),
                           ),
-                          Stack(
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                height: 50.0,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFAB51E3),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 20.0,
-                                      color: Color(0xFFBD7DE6),
-                                      offset: Offset(
-                                        0.0,
-                                        2.0,
-                                      ),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
-                                  },
-                                  text: 'Save',
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 50.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFF8B2FC9),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Inter Tight',
-                                          color: Colors.white,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    elevation: 0.0,
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFBE39EF),
-                                      width: 4.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                           StyledDivider(
                             thickness: 2.0,
                             color: FlutterFlowTheme.of(context)
@@ -703,9 +649,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     onPressed: () async {
                                       logFirebaseEvent(
                                           'ONBOARDING_CONNECT_SPOTIFY_BTN_ON_TAP');
-                                      logFirebaseEvent('Button_launch_u_r_l');
-                                      await launchURL(
-                                          'https://accounts.spotify.com/authorize?client_id=f4e1a9bf37164211ac9e9f996375b60f&response_type=code&redirect_uri=https://spotifycallback-nqeqw2nsyq-uc.a.run.app&scope=user-read-private%20user-read-email&show_dialog=true&state={{currentUser.uid}}');
+                                      if (isWeb) {
+                                        logFirebaseEvent('Button_launch_u_r_l');
+                                        await launchURL(
+                                            'Https://accounts.spotify.com/authorize?response_type=code&client_id=c0246411011a4ba5a8d31f1fea774b7d&scope=user-read-recently-played&redirect_uri=putuon://onboarding ');
+                                      } else {
+                                        logFirebaseEvent('Button_launch_u_r_l');
+                                        await launchURL(
+                                            'https://accounts.spotify.com/authorize?response_type=code&client_id=f4e1a9bf37164211ac9e9f996375b60f&scope=user-read-recently-played&redirect_uri=https://put-u-on-v87ycz.flutterflow.app/');
+                                      }
                                     },
                                     text: 'Connect Spotify',
                                     options: FFButtonOptions(
@@ -735,6 +687,117 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 ],
                               ),
                             ].divide(SizedBox(height: 30.0)),
+                          ),
+                          Stack(
+                            children: [
+                              Container(
+                                width: double.infinity,
+                                height: 50.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFAB51E3),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 20.0,
+                                      color: Color(0xFFBD7DE6),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'ONBOARDING_PAGE_SAVE_BTN_ON_TAP');
+                                      logFirebaseEvent(
+                                          'Button_firestore_query');
+                                      _model.usernameCheck =
+                                          await queryUsersRecordOnce(
+                                        queryBuilder: (usersRecord) =>
+                                            usersRecord.where(
+                                          'user_name',
+                                          isEqualTo: _model
+                                              .usernameInputTextController.text,
+                                        ),
+                                        singleRecord: true,
+                                      ).then((s) => s.firstOrNull);
+                                      if (_model.usernameCheck?.userName ==
+                                              null ||
+                                          _model.usernameCheck?.userName ==
+                                              '') {
+                                        logFirebaseEvent('Button_backend_call');
+
+                                        await currentUserReference!
+                                            .update(createUsersRecordData(
+                                          userName: _model
+                                              .usernameInputTextController.text,
+                                          displayName: _model
+                                              .nameInputTextController.text,
+                                          location: valueOrDefault(
+                                              currentUserDocument?.location,
+                                              ''),
+                                        ));
+                                        logFirebaseEvent('Button_navigate_to');
+
+                                        context.goNamed(
+                                            GoldenPathWidget.routeName);
+                                      } else {
+                                        logFirebaseEvent(
+                                            'Button_show_snack_bar');
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Username already in use',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .error,
+                                          ),
+                                        );
+                                      }
+
+                                      safeSetState(() {});
+                                    },
+                                    text: 'Save',
+                                    options: FFButtonOptions(
+                                      width: double.infinity,
+                                      height: 50.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: Color(0xFF8B2FC9),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Inter Tight',
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0.0,
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFBE39EF),
+                                        width: 4.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ].divide(SizedBox(height: 32.0)),
                       ),

@@ -1,4 +1,4 @@
-package com.mycompany.putuon
+package com.uricsc305.putuon
 
 import io.flutter.embedding.android.FlutterActivity
 

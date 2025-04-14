@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.putuon</string>
+	<string>com.uricsc305.putuon</string>
 	<key>PROJECT_ID</key>
 	<string>put-u-on-v87ycz</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:562385796089:ios:fe63ca7b2e8517dc7f1b28</string>
+	<string>1:562385796089:ios:3a90f8eff2e989057f1b28</string>
 </dict>
 </plist>
