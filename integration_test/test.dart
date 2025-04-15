@@ -98,6 +98,33 @@ void main() async {
     expect(find.text('Cyra'), findsWidgets);
     expect(find.text('cyrafish'), findsWidgets);
   });
+
+  testWidgets('onboarding smooth test', (WidgetTester tester) async {
+    _overrideOnError();
+
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => FFAppState(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => spotify_item_mwlatt_app_state.FFAppState(),
+        ),
+      ],
+      child: const MyApp(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.pumpAndSettle();
+    await tester.enterText(
+        find.byKey(const ValueKey('usernameInput_f2vp')), 'EmRoboTest');
+    await tester.enterText(
+        find.byKey(const ValueKey('nameInput_jt4u')), 'Emily');
+    await tester.enterText(
+        find.byKey(const ValueKey('locationInput_24ux')), 'Cranston');
+    await tester.tap(find.byKey(const ValueKey('Button_i9r9')));
+    await tester.pumpAndSettle();
+  });
 }
 
 // There are certain types of errors that can happen during tests but
