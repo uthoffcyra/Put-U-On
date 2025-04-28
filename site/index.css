@@ -1,0 +1,12 @@
+body {
+	background-color: #11001C;
+	font-family: 'Inter Tight', sans-serif;
+	color: #E9E9E9;
+}
+
+@font-face {
+	font-family: 'Inter Tight';
+	src: url('InterTight-VariableFont_wght.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
