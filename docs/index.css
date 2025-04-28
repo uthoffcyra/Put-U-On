@@ -4,7 +4,7 @@ body {
 	margin: 0;
 }
 
-#basic {
+#banner {
 	display: block;
 	position: relative;
 	width: 100vw;
@@ -22,20 +22,24 @@ body {
 	position: absolute;
 	top: 0; left: 0;
 	right: 0; bottom: 0;
-	background-color: #00000078;
+	background-color: #00000085;
 }
-.cover img {
+#banner .spacer {
 	position: absolute;
-	width: 200px; height: 200px;
-	border-radius: 40px;
-	bottom: 40px; left: 40px;
+	bottom: 30px; left: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 30px;
 }
-#basic h1 {
+#banner img {
+	width: 150px; height: 150px;
+	border-radius: 40px;
+}
+#banner h1 {
 	margin: 0;
 	font-weight: bold;
 	width: 50vw;
-	position: absolute;
-	bottom: 60px; left: 280px;
 	font-size: 100px;
 	color: #E9E9E9;
 }
@@ -84,16 +88,67 @@ body {
 }
 
 #about p {
-	margin: 60px 60px;
+	margin: 60px 8vw;
 	font-size: 20px;
+	text-align: center;
 }
 
 #gallery {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 500px;
+	margin: 32px;
+}
+#gallery img {
+	width: 60vw;
+	border-radius: 10px;
+}
 
+#rights {
+	margin: 32px;
+	text-align: center;
+	color: #8b8181;
 }
 
 @font-face {
 	font-family: 'Inter Tight';
 	src: url('InterTight-VariableFont_wght.ttf') format('truetype');
 	font-style: normal;
+}
+
+@media screen and (max-width: 900px) {
+	#banner {
+		height: 200px;
+		background-position: 0 -70px;
+	}
+	#banner img {
+		width: 100px;
+		height: 100px;
+		border-radius: 20px;
+	}
+	#banner h1 {
+		font-size: 60px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	#banner {
+		height: 200px;
+		background-position: 0 -20px;
+	}
+	#banner h1 {
+		font-size: 42px;
+	}
+
+	#links {
+		flex-direction: column;
+	}
+	#links a {
+		width: 100%;
+		justify-content: center;
+	}
+	#links span {
+		display: none;
+	}
 }
