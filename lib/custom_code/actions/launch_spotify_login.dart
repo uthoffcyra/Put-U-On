@@ -2,6 +2,7 @@
 import '/backend/backend.dart';
 import "package:spotify_item_mwlatt/backend/schema/structs/index.dart"
     as spotify_item_mwlatt_data_schema;
+import '/backend/schema/structs/index.dart';
 import "package:spotify_item_mwlatt/backend/schema/structs/index.dart"
     as spotify_item_mwlatt_data_schema;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';

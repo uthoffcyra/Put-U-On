@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 
 import 'index.dart';
@@ -42,11 +41,6 @@ class UsersRecord extends FirestoreRecord {
   DateTime? get createdTime => _createdTime;
   bool hasCreatedTime() => _createdTime != null;
 
-  // "phone_number" field.
-  String? _phoneNumber;
-  String get phoneNumber => _phoneNumber ?? '';
-  bool hasPhoneNumber() => _phoneNumber != null;
-
   // "location" field.
   String? _location;
   String get location => _location ?? '';
@@ -77,19 +71,42 @@ class UsersRecord extends FirestoreRecord {
   List<String> get manualTags => _manualTags ?? const [];
   bool hasManualTags() => _manualTags != null;
 
+  // "last_used_flavor" field.
+  String? _lastUsedFlavor;
+  String get lastUsedFlavor => _lastUsedFlavor ?? '';
+  bool hasLastUsedFlavor() => _lastUsedFlavor != null;
+
+  // "phone_number" field.
+  String? _phoneNumber;
+  String get phoneNumber => _phoneNumber ?? '';
+  bool hasPhoneNumber() => _phoneNumber != null;
+
+  // "dynamic_weights" field.
+  String? _dynamicWeights;
+  String get dynamicWeights => _dynamicWeights ?? '';
+  bool hasDynamicWeights() => _dynamicWeights != null;
+
+  // "followers" field.
+  List<DocumentReference>? _followers;
+  List<DocumentReference> get followers => _followers ?? const [];
+  bool hasFollowers() => _followers != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
     _photoUrl = snapshotData['photo_url'] as String?;
     _uid = snapshotData['uid'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
-    _phoneNumber = snapshotData['phone_number'] as String?;
     _location = snapshotData['location'] as String?;
     _userName = snapshotData['user_name'] as String?;
     _reccomendation = castToType<int>(snapshotData['reccomendation']);
     _nps = castToType<double>(snapshotData['NPS']);
     _loginCount = castToType<int>(snapshotData['login_count']);
     _manualTags = getDataList(snapshotData['manual_tags']);
+    _lastUsedFlavor = snapshotData['last_used_flavor'] as String?;
+    _phoneNumber = snapshotData['phone_number'] as String?;
+    _dynamicWeights = snapshotData['dynamic_weights'] as String?;
+    _followers = getDataList(snapshotData['followers']);
   }
 
   static CollectionReference get collection =>
@@ -131,12 +148,14 @@ Map<String, dynamic> createUsersRecordData({
   String? photoUrl,
   String? uid,
   DateTime? createdTime,
-  String? phoneNumber,
   String? location,
   String? userName,
   int? reccomendation,
   double? nps,
   int? loginCount,
+  String? lastUsedFlavor,
+  String? phoneNumber,
+  String? dynamicWeights,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -145,12 +164,14 @@ Map<String, dynamic> createUsersRecordData({
       'photo_url': photoUrl,
       'uid': uid,
       'created_time': createdTime,
-      'phone_number': phoneNumber,
       'location': location,
       'user_name': userName,
       'reccomendation': reccomendation,
       'NPS': nps,
       'login_count': loginCount,
+      'last_used_flavor': lastUsedFlavor,
+      'phone_number': phoneNumber,
+      'dynamic_weights': dynamicWeights,
     }.withoutNulls,
   );
 
@@ -168,13 +189,16 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.photoUrl == e2?.photoUrl &&
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.phoneNumber == e2?.phoneNumber &&
         e1?.location == e2?.location &&
         e1?.userName == e2?.userName &&
         e1?.reccomendation == e2?.reccomendation &&
         e1?.nps == e2?.nps &&
         e1?.loginCount == e2?.loginCount &&
-        listEquality.equals(e1?.manualTags, e2?.manualTags);
+        listEquality.equals(e1?.manualTags, e2?.manualTags) &&
+        e1?.lastUsedFlavor == e2?.lastUsedFlavor &&
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.dynamicWeights == e2?.dynamicWeights &&
+        listEquality.equals(e1?.followers, e2?.followers);
   }
 
   @override
@@ -184,13 +208,16 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.photoUrl,
         e?.uid,
         e?.createdTime,
-        e?.phoneNumber,
         e?.location,
         e?.userName,
         e?.reccomendation,
         e?.nps,
         e?.loginCount,
-        e?.manualTags
+        e?.manualTags,
+        e?.lastUsedFlavor,
+        e?.phoneNumber,
+        e?.dynamicWeights,
+        e?.followers
       ]);
 
   @override

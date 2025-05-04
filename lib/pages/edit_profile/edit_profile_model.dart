@@ -1,10 +1,9 @@
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'onboarding_widget.dart' show OnboardingWidget;
+import 'edit_profile_widget.dart' show EditProfileWidget;
 import 'package:flutter/material.dart';
 
-class OnboardingModel extends FlutterFlowModel<OnboardingWidget> {
+class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   ///  Local state fields for this page.
 
   DateTime? birthdayInput;
@@ -67,8 +66,6 @@ class OnboardingModel extends FlutterFlowModel<OnboardingWidget> {
   }
 
   DateTime? datePicked;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  UsersRecord? usernameCheck;
 
   @override
   void initState(BuildContext context) {

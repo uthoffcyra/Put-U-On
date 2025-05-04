@@ -8,10 +8,10 @@ import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
 import 'backend/firebase/firebase_config.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'index.dart';
+
+import '/flutter_flow/admob_util.dart';
 
 import 'package:spotify_item_mwlatt/app_state.dart'
     as spotify_item_mwlatt_app_state;
@@ -23,6 +23,9 @@ void main() async {
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
 
+  final environmentValues = FFDevEnvironmentValues();
+  await environmentValues.initialize();
+
   spotify_item_mwlatt_library_values.FFLibraryValues().clientID =
       'f4e1a9bf37164211ac9e9f996375b60f';
   spotify_item_mwlatt_library_values.FFLibraryValues().clientSecret =
@@ -32,6 +35,8 @@ void main() async {
   spotify_item_mwlatt_library_values.FFLibraryValues().redirectUrlMobile =
       'https://spotifycallback-nqeqw2nsyq-uc.a.run.app';
   await initFirebase();
+
+  adMobUpdateRequestConfiguration();
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
@@ -174,9 +179,10 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'weatherPage': WeatherPageWidget(),
+      'userSettings': UserSettingsWidget(),
       'goldenPath': GoldenPathWidget(),
-      'usersettings': UsersettingsWidget(),
+      'likedSongs': LikedSongsWidget(),
+      'socialFeature': SocialFeatureWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -188,19 +194,19 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: Color(0xB3923297),
-        selectedItemColor: FlutterFlowTheme.of(context).primaryBackground,
-        unselectedItemColor: Color(0xFF778691),
+        backgroundColor: Color(0xFF240A35),
+        selectedItemColor: Color(0xFFEEDBFF),
+        unselectedItemColor: Color(0xFF9A5CBD),
         showSelectedLabels: false,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.cloudversify,
+            icon: Icon(
+              Icons.person,
               size: 24.0,
             ),
-            label: '    ',
+            label: 'Home',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -213,10 +219,17 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person,
+              Icons.favorite_border,
               size: 24.0,
             ),
-            label: 'Home',
+            label: 'Liked',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.emoji_people_outlined,
+            ),
+            label: '',
             tooltip: '',
           )
         ],

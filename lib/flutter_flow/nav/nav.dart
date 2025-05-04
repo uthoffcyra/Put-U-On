@@ -81,38 +81,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? entryPage ?? NavBarPage()
-          : LoginsignupWidget(),
+          : LoginSignUpWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? entryPage ?? NavBarPage()
-              : LoginsignupWidget(),
+              : LoginSignUpWidget(),
           routes: [
             FFRoute(
-              name: LoginsignupWidget.routeName,
-              path: LoginsignupWidget.routePath,
-              builder: (context, params) => LoginsignupWidget(),
+              name: LoginSignUpWidget.routeName,
+              path: LoginSignUpWidget.routePath,
+              builder: (context, params) => LoginSignUpWidget(),
             ),
             FFRoute(
-              name: OnboardingWidget.routeName,
-              path: OnboardingWidget.routePath,
+              name: EditProfileWidget.routeName,
+              path: EditProfileWidget.routePath,
               requireAuth: true,
-              builder: (context, params) => OnboardingWidget(
-                showSpotifyButton: params.getParam(
-                  'showSpotifyButton',
-                  ParamType.bool,
+              builder: (context, params) => EditProfileWidget(
+                referral: params.getParam(
+                  'referral',
+                  ParamType.String,
                 ),
               ),
             ),
             FFRoute(
-              name: UsersettingsWidget.routeName,
-              path: UsersettingsWidget.routePath,
+              name: UserSettingsWidget.routeName,
+              path: UserSettingsWidget.routePath,
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'usersettings')
-                  : UsersettingsWidget(),
+                  ? NavBarPage(initialPage: 'userSettings')
+                  : UserSettingsWidget(),
             ),
             FFRoute(
               name: GoldenPathWidget.routeName,
@@ -126,22 +126,40 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
                     ),
             ),
             FFRoute(
-              name: WeatherPageWidget.routeName,
-              path: WeatherPageWidget.routePath,
+              name: TagSelectionWidget.routeName,
+              path: TagSelectionWidget.routePath,
               requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'weatherPage')
-                  : WeatherPageWidget(),
+              builder: (context, params) => TagSelectionWidget(
+                referral: params.getParam(
+                  'referral',
+                  ParamType.String,
+                ),
+              ),
             ),
             FFRoute(
-              name: TagselectionWidget.routeName,
-              path: TagselectionWidget.routePath,
+              name: LikedSongsWidget.routeName,
+              path: LikedSongsWidget.routePath,
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'likedSongs')
+                  : LikedSongsWidget(),
+            ),
+            FFRoute(
+              name: SocialFeatureWidget.routeName,
+              path: SocialFeatureWidget.routePath,
               requireAuth: true,
-              builder: (context, params) => TagselectionWidget(),
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'socialFeature')
+                  : SocialFeatureWidget(),
+            ),
+            FFRoute(
+              name: FriendsListWidget.routeName,
+              path: FriendsListWidget.routePath,
+              builder: (context, params) => FriendsListWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
@@ -312,7 +330,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/loginsignup';
+            return '/loginSignUp';
           }
           return null;
         },

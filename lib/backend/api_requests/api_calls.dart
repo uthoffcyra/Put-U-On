@@ -159,6 +159,62 @@ class GetRecommendationsCall {
       ) as List?;
 }
 
+class GetSongMetadataCall {
+  static Future<ApiCallResponse> call({
+    dynamic queriesJson,
+  }) async {
+    final queries = _serializeJson(queriesJson, true);
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getSongMetadata',
+      apiUrl: 'https://getsongmetadata-nqeqw2nsyq-uc.a.run.app/',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'queries': queries,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class YoutubeApiCall {
+  static Future<ApiCallResponse> call({
+    String? searchQuery = 'espresso sabrina carpenter',
+    String? apiKey = 'AIzaSyB8t4mYvNAL_VrB7AJDgEkwXu0x4ZM_-WM',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'youtubeApi',
+      apiUrl: 'https://www.googleapis.com/youtube/v3/search',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'part': "snippet",
+        'type': "video",
+        'maxResults': "1",
+        'q': searchQuery,
+        'key': apiKey,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? videoID(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.items[0].id.videoId''',
+      ));
+}
+
 String _toEncodable(dynamic item) {
   if (item is DocumentReference) {
     return item.path;

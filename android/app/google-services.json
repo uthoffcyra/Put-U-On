@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "562385796089",
-    "project_id": "put-u-on-v87ycz",
-    "storage_bucket": "put-u-on-v87ycz.firebasestorage.app"
+    "project_number": "158867891040",
+    "project_id": "put-u-on-dev-2fd6e",
+    "storage_bucket": "put-u-on-dev-2fd6e.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:562385796089:android:e1bbf0753ed5db967f1b28",
+        "mobilesdk_app_id": "1:158867891040:android:33efa9f10624a937d93405",
         "android_client_info": {
-          "package_name": "com.mycompany.putuon"
+          "package_name": "com.uricsc305.putuon"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC6PVs1pOOWpHMCsSMRJGYC7-8O1riJYgw"
+          "current_key": "AIzaSyCj0pnWk3TPXw06QQzcjTuHSBsbgItadTk"
         }
       ],
       "services": {
@@ -26,15 +26,15 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:562385796089:android:7688c963ed43b1257f1b28",
+        "mobilesdk_app_id": "1:158867891040:android:fd59d4e40ce00b67d93405",
         "android_client_info": {
-          "package_name": "com.uricsc305.putuon"
+          "package_name": "com.uricsc305.putuondev"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC6PVs1pOOWpHMCsSMRJGYC7-8O1riJYgw"
+          "current_key": "AIzaSyCj0pnWk3TPXw06QQzcjTuHSBsbgItadTk"
         }
       ],
       "services": {

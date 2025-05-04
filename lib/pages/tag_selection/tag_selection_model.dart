@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'tagselection_widget.dart' show TagselectionWidget;
+import 'tag_selection_widget.dart' show TagSelectionWidget;
 import 'package:flutter/material.dart';
 
-class TagselectionModel extends FlutterFlowModel<TagselectionWidget> {
+class TagSelectionModel extends FlutterFlowModel<TagSelectionWidget> {
   ///  Local state fields for this page.
 
   List<String> spotifyTags = [

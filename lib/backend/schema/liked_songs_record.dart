@@ -36,11 +36,41 @@ class LikedSongsRecord extends FirestoreRecord {
   DocumentReference? get user => _user;
   bool hasUser() => _user != null;
 
+  // "cover_art" field.
+  String? _coverArt;
+  String get coverArt => _coverArt ?? '';
+  bool hasCoverArt() => _coverArt != null;
+
+  // "url" field.
+  String? _url;
+  String get url => _url ?? '';
+  bool hasUrl() => _url != null;
+
+  // "explicit" field.
+  bool? _explicit;
+  bool get explicit => _explicit ?? false;
+  bool hasExplicit() => _explicit != null;
+
+  // "added" field.
+  DateTime? _added;
+  DateTime? get added => _added;
+  bool hasAdded() => _added != null;
+
+  // "recommended" field.
+  bool? _recommended;
+  bool get recommended => _recommended ?? false;
+  bool hasRecommended() => _recommended != null;
+
   void _initializeFields() {
     _songTitle = snapshotData['song_title'] as String?;
     _artist = snapshotData['artist'] as String?;
     _rating = castToType<int>(snapshotData['rating']);
     _user = snapshotData['user'] as DocumentReference?;
+    _coverArt = snapshotData['cover_art'] as String?;
+    _url = snapshotData['url'] as String?;
+    _explicit = snapshotData['explicit'] as bool?;
+    _added = snapshotData['added'] as DateTime?;
+    _recommended = snapshotData['recommended'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -82,6 +112,11 @@ Map<String, dynamic> createLikedSongsRecordData({
   String? artist,
   int? rating,
   DocumentReference? user,
+  String? coverArt,
+  String? url,
+  bool? explicit,
+  DateTime? added,
+  bool? recommended,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -89,6 +124,11 @@ Map<String, dynamic> createLikedSongsRecordData({
       'artist': artist,
       'rating': rating,
       'user': user,
+      'cover_art': coverArt,
+      'url': url,
+      'explicit': explicit,
+      'added': added,
+      'recommended': recommended,
     }.withoutNulls,
   );
 
@@ -103,12 +143,26 @@ class LikedSongsRecordDocumentEquality implements Equality<LikedSongsRecord> {
     return e1?.songTitle == e2?.songTitle &&
         e1?.artist == e2?.artist &&
         e1?.rating == e2?.rating &&
-        e1?.user == e2?.user;
+        e1?.user == e2?.user &&
+        e1?.coverArt == e2?.coverArt &&
+        e1?.url == e2?.url &&
+        e1?.explicit == e2?.explicit &&
+        e1?.added == e2?.added &&
+        e1?.recommended == e2?.recommended;
   }
 
   @override
-  int hash(LikedSongsRecord? e) =>
-      const ListEquality().hash([e?.songTitle, e?.artist, e?.rating, e?.user]);
+  int hash(LikedSongsRecord? e) => const ListEquality().hash([
+        e?.songTitle,
+        e?.artist,
+        e?.rating,
+        e?.user,
+        e?.coverArt,
+        e?.url,
+        e?.explicit,
+        e?.added,
+        e?.recommended
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is LikedSongsRecord;

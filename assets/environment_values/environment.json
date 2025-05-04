@@ -1,0 +1,6 @@
+{
+  "currentEnv": "production",
+"stripeAPI": "stripe.com/api/real",
+"showTestText": false,
+"showAds": true
+}

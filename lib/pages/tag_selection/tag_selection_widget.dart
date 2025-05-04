@@ -5,31 +5,37 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'tagselection_model.dart';
-export 'tagselection_model.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'tag_selection_model.dart';
+export 'tag_selection_model.dart';
 
-class TagselectionWidget extends StatefulWidget {
-  const TagselectionWidget({super.key});
+class TagSelectionWidget extends StatefulWidget {
+  const TagSelectionWidget({
+    super.key,
+    this.referral,
+  });
 
-  static String routeName = 'tagselection';
-  static String routePath = 'tagselection';
+  final String? referral;
+
+  static String routeName = 'tagSelection';
+  static String routePath = 'tagSelection';
 
   @override
-  State<TagselectionWidget> createState() => _TagselectionWidgetState();
+  State<TagSelectionWidget> createState() => _TagSelectionWidgetState();
 }
 
-class _TagselectionWidgetState extends State<TagselectionWidget> {
-  late TagselectionModel _model;
+class _TagSelectionWidgetState extends State<TagSelectionWidget> {
+  late TagSelectionModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TagselectionModel());
+    _model = createModel(context, () => TagSelectionModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'tagselection'});
+        parameters: {'screen_name': 'tagSelection'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -71,8 +77,21 @@ class _TagselectionWidgetState extends State<TagselectionWidget> {
                       'Let\'s choose some music genres...',
                       style:
                           FlutterFlowTheme.of(context).headlineLarge.override(
-                                fontFamily: 'Inter Tight',
+                                font: GoogleFonts.interTight(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
+                                ),
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .fontStyle,
                               ),
                     ),
                   ),
@@ -142,14 +161,35 @@ class _TagselectionWidgetState extends State<TagselectionWidget> {
                                             },
                                             title: Text(
                                               tagItemItem,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Inter Tight',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleLarge
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.interTight(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleLarge
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleLarge
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                             tileColor:
                                                 FlutterFlowTheme.of(context)
@@ -206,24 +246,44 @@ class _TagselectionWidgetState extends State<TagselectionWidget> {
                         ),
                       ),
                       FFButtonWidget(
+                        key: ValueKey('Button_o0qr'),
                         onPressed: () async {
                           logFirebaseEvent(
-                              'TAGSELECTION_COMPLETE_SELECTION_BTN_ON_T');
-                          logFirebaseEvent('Button_backend_call');
+                              'TAG_SELECTION_COMPLETE_SELECTION_BTN_ON_');
+                          if (widget.referral == 'sign up') {
+                            logFirebaseEvent('Button_backend_call');
 
-                          await currentUserReference!.update({
-                            ...mapToFirestore(
-                              {
-                                'manual_tags':
-                                    _model.checkboxListTileCheckedItems,
-                              },
-                            ),
-                          });
-                          logFirebaseEvent('Button_navigate_to');
+                            await currentUserReference!.update({
+                              ...mapToFirestore(
+                                {
+                                  'manual_tags':
+                                      _model.checkboxListTileCheckedItems,
+                                },
+                              ),
+                            });
+                            logFirebaseEvent('Button_navigate_to');
 
-                          context.goNamed(GoldenPathWidget.routeName);
+                            context.goNamed(GoldenPathWidget.routeName);
+                          } else {
+                            logFirebaseEvent('Button_backend_call');
+
+                            await currentUserReference!.update({
+                              ...mapToFirestore(
+                                {
+                                  'manual_tags':
+                                      _model.checkboxListTileCheckedItems,
+                                  'dynamic_weights': FieldValue.delete(),
+                                },
+                              ),
+                            });
+                            logFirebaseEvent('Button_navigate_to');
+
+                            context.goNamed(UserSettingsWidget.routeName);
+                          }
                         },
-                        text: 'Complete Selection',
+                        text: widget.referral == 'sign up'
+                            ? 'Complete'
+                            : 'Update Choices',
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 50.0,
@@ -234,9 +294,22 @@ class _TagselectionWidgetState extends State<TagselectionWidget> {
                           color: Color(0xFF8B2FC9),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Inter Tight',
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                                     color: Colors.white,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
                                   ),
                           elevation: 0.0,
                           borderSide: BorderSide(

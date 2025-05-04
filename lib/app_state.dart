@@ -85,6 +85,12 @@ class FFAppState extends ChangeNotifier {
   set spotifyUserId(String value) {
     _spotifyUserId = value;
   }
+
+  String _youtubeID = '';
+  String get youtubeID => _youtubeID;
+  set youtubeID(String value) {
+    _youtubeID = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

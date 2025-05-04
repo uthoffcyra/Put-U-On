@@ -1,3 +1,78 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "liked_songs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "user",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "added",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "liked_songs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "recommended",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "added",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "liked_songs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "recommended",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "user",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "added",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "followers",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "user_name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "uid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_time",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
 }
