@@ -114,7 +114,7 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
             alignment: AlignmentDirectional(0.0, 0.0),
             child: Container(
               constraints: BoxConstraints(
-                maxWidth: 400.0,
+                maxWidth: 600.0,
               ),
               decoration: BoxDecoration(),
               child: Container(
@@ -517,252 +517,268 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
                                       itemBuilder: (context, trackItemIndex) {
                                         final trackItemItem =
                                             trackItem[trackItemIndex];
-                                        return Material(
-                                          color: Colors.transparent,
-                                          elevation: 1.0,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          child: Container(
-                                            width: double.infinity,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  blurRadius: 4.0,
-                                                  color: Color(0x2B202529),
-                                                  offset: Offset(
-                                                    0.0,
-                                                    2.0,
-                                                  ),
-                                                )
-                                              ],
+                                        return Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            elevation: 1.0,
+                                            shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(16.0),
-                                              border: Border.all(
+                                            ),
+                                            child: Container(
+                                              width: double.infinity,
+                                              constraints: BoxConstraints(
+                                                maxWidth: 400.0,
+                                                maxHeight: 700.0,
+                                              ),
+                                              decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                width: 2.0,
+                                                        .primaryBackground,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 4.0,
+                                                    color: Color(0x2B202529),
+                                                    offset: Offset(
+                                                      0.0,
+                                                      2.0,
+                                                    ),
+                                                  )
+                                                ],
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  width: 2.0,
+                                                ),
                                               ),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsets.all(20.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      if (!_model.showVideo)
-                                                        Container(
-                                                          width: 240.0,
-                                                          height: 240.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0x17923297),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        16.0),
-                                                          ),
-                                                          child: Stack(
-                                                            children: [
-                                                              ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            16.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    getJsonField(
-                                                                      trackItemItem,
-                                                                      r'''$.image''',
-                                                                    )?.toString(),
-                                                                    'https://firebasestorage.googleapis.com/v0/b/put-u-on-v87ycz.firebasestorage.app/o/vinyl.jpg?alt=media&token=f8a5bf0e-4560-4607-8c9c-ec4ffdd8cfc2',
-                                                                  ),
-                                                                  fit: BoxFit
-                                                                      .cover,
-                                                                ),
-                                                              ),
-                                                              Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Builder(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          FlutterFlowIconButton(
-                                                                    borderRadius:
-                                                                        1000.0,
-                                                                    buttonSize:
-                                                                        50.0,
-                                                                    fillColor: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
-                                                                    icon: Icon(
-                                                                      Icons
-                                                                          .play_arrow,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .info,
-                                                                      size:
-                                                                          30.0,
+                                              child: Padding(
+                                                padding: EdgeInsets.all(20.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        if (!_model.showVideo)
+                                                          Container(
+                                                            width: 240.0,
+                                                            height: 240.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0x17923297),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          16.0),
+                                                            ),
+                                                            child: Stack(
+                                                              children: [
+                                                                ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              16.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      getJsonField(
+                                                                        trackItemItem,
+                                                                        r'''$.image''',
+                                                                      )?.toString(),
+                                                                      'https://firebasestorage.googleapis.com/v0/b/put-u-on-v87ycz.firebasestorage.app/o/vinyl.jpg?alt=media&token=f8a5bf0e-4560-4607-8c9c-ec4ffdd8cfc2',
                                                                     ),
-                                                                    onPressed:
-                                                                        () async {
-                                                                      logFirebaseEvent(
-                                                                          'GOLDEN_PATH_PAGE_PlayButton_ON_TAP');
-                                                                      logFirebaseEvent(
-                                                                          'PlayButton_backend_call');
-                                                                      _model.youtubeButton =
-                                                                          await YoutubeApiCall
-                                                                              .call(
-                                                                        searchQuery:
-                                                                            '${getJsonField(
-                                                                          trackItemItem,
-                                                                          r'''$.track''',
-                                                                        ).toString()} ${getJsonField(
-                                                                          trackItemItem,
-                                                                          r'''$.artist''',
-                                                                        ).toString()}',
-                                                                      );
+                                                                    fit: BoxFit
+                                                                        .cover,
+                                                                  ),
+                                                                ),
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Builder(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            FlutterFlowIconButton(
+                                                                      borderRadius:
+                                                                          1000.0,
+                                                                      buttonSize:
+                                                                          50.0,
+                                                                      fillColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      icon:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .play_arrow,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .info,
+                                                                        size:
+                                                                            30.0,
+                                                                      ),
+                                                                      onPressed:
+                                                                          () async {
+                                                                        logFirebaseEvent(
+                                                                            'GOLDEN_PATH_PAGE_PlayButton_ON_TAP');
+                                                                        logFirebaseEvent(
+                                                                            'PlayButton_backend_call');
+                                                                        _model.youtubeButton =
+                                                                            await YoutubeApiCall.call(
+                                                                          searchQuery:
+                                                                              '${getJsonField(
+                                                                            trackItemItem,
+                                                                            r'''$.track''',
+                                                                          ).toString()} ${getJsonField(
+                                                                            trackItemItem,
+                                                                            r'''$.artist''',
+                                                                          ).toString()}',
+                                                                        );
 
-                                                                      if ((_model
-                                                                              .youtubeButton
-                                                                              ?.succeeded ??
-                                                                          true)) {
-                                                                        logFirebaseEvent(
-                                                                            'PlayButton_update_app_state');
-                                                                        FFAppState().youtubeID =
-                                                                            YoutubeApiCall.videoID(
-                                                                          (_model.youtubeButton?.jsonBody ??
-                                                                              ''),
-                                                                        )!;
-                                                                        safeSetState(
-                                                                            () {});
-                                                                        logFirebaseEvent(
-                                                                            'PlayButton_alert_dialog');
-                                                                        await showDialog(
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (dialogContext) {
-                                                                            return Dialog(
-                                                                              elevation: 0,
-                                                                              insetPadding: EdgeInsets.zero,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              child: WebViewAware(
-                                                                                child: GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(dialogContext).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Container(
-                                                                                    height: 300.0,
-                                                                                    width: 400.0,
-                                                                                    child: YouTubePopupWidget(),
+                                                                        if ((_model.youtubeButton?.succeeded ??
+                                                                            true)) {
+                                                                          logFirebaseEvent(
+                                                                              'PlayButton_update_app_state');
+                                                                          FFAppState().youtubeID =
+                                                                              YoutubeApiCall.videoID(
+                                                                            (_model.youtubeButton?.jsonBody ??
+                                                                                ''),
+                                                                          )!;
+                                                                          safeSetState(
+                                                                              () {});
+                                                                          logFirebaseEvent(
+                                                                              'PlayButton_alert_dialog');
+                                                                          await showDialog(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (dialogContext) {
+                                                                              return Dialog(
+                                                                                elevation: 0,
+                                                                                insetPadding: EdgeInsets.zero,
+                                                                                backgroundColor: Colors.transparent,
+                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                child: WebViewAware(
+                                                                                  child: GestureDetector(
+                                                                                    onTap: () {
+                                                                                      FocusScope.of(dialogContext).unfocus();
+                                                                                      FocusManager.instance.primaryFocus?.unfocus();
+                                                                                    },
+                                                                                    child: Container(
+                                                                                      height: 300.0,
+                                                                                      width: 400.0,
+                                                                                      child: YouTubePopupWidget(),
+                                                                                    ),
                                                                                   ),
                                                                                 ),
-                                                                              ),
-                                                                            );
-                                                                          },
-                                                                        );
-                                                                      } else {
-                                                                        logFirebaseEvent(
-                                                                            'PlayButton_show_snack_bar');
-                                                                        ScaffoldMessenger.of(context)
-                                                                            .showSnackBar(
-                                                                          SnackBar(
-                                                                            content:
-                                                                                Text(
-                                                                              'Couldn\'t find song for playback.',
-                                                                              style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    font: GoogleFonts.inter(
+                                                                              );
+                                                                            },
+                                                                          );
+                                                                        } else {
+                                                                          logFirebaseEvent(
+                                                                              'PlayButton_show_snack_bar');
+                                                                          ScaffoldMessenger.of(context)
+                                                                              .showSnackBar(
+                                                                            SnackBar(
+                                                                              content: Text(
+                                                                                'Couldn\'t find song for playback.',
+                                                                                style: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                      font: GoogleFonts.inter(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                      ),
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      letterSpacing: 0.0,
                                                                                       fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                       fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                     ),
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                  ),
+                                                                              ),
+                                                                              duration: Duration(milliseconds: 4000),
+                                                                              backgroundColor: FlutterFlowTheme.of(context).error,
                                                                             ),
-                                                                            duration:
-                                                                                Duration(milliseconds: 4000),
-                                                                            backgroundColor:
-                                                                                FlutterFlowTheme.of(context).error,
-                                                                          ),
-                                                                        );
-                                                                      }
+                                                                          );
+                                                                        }
 
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      },
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ],
+                                                              ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                      if (_model.showVideo)
-                                                        FlutterFlowYoutubePlayer(
-                                                          url:
-                                                              'https://www.youtube.com/watch?v=${FFAppState().youtubeID}',
-                                                          width: 240.0,
-                                                          height: 240.0,
-                                                          autoPlay: false,
-                                                          looping: true,
-                                                          mute: false,
-                                                          showControls: true,
-                                                          showFullScreen: true,
-                                                          strictRelatedVideos:
-                                                              true,
-                                                        ),
-                                                    ],
-                                                  ),
-                                                  Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Flexible(
-                                                            child: Text(
-                                                              getJsonField(
-                                                                trackItemItem,
-                                                                r'''$.track''',
-                                                              ).toString(),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleLarge
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .interTight(
+                                                        if (_model.showVideo)
+                                                          FlutterFlowYoutubePlayer(
+                                                            url:
+                                                                'https://www.youtube.com/watch?v=${FFAppState().youtubeID}',
+                                                            width: 240.0,
+                                                            height: 240.0,
+                                                            autoPlay: false,
+                                                            looping: true,
+                                                            mute: false,
+                                                            showControls: true,
+                                                            showFullScreen:
+                                                                true,
+                                                            strictRelatedVideos:
+                                                                true,
+                                                          ),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                getJsonField(
+                                                                  trackItemItem,
+                                                                  r'''$.track''',
+                                                                ).toString(),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLarge
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .interTight(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
@@ -772,62 +788,33 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
                                                                           .titleLarge
                                                                           .fontStyle,
                                                                     ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
-                                                          ),
-                                                          if (getJsonField(
+                                                            if (getJsonField(
+                                                              trackItemItem,
+                                                              r'''$.explicit''',
+                                                            ))
+                                                              Icon(
+                                                                Icons
+                                                                    .explicit_rounded,
+                                                                color: Color(
+                                                                    0xB3745276),
+                                                                size: 20.0,
+                                                              ),
+                                                          ].divide(SizedBox(
+                                                              width: 8.0)),
+                                                        ),
+                                                        Text(
+                                                          getJsonField(
                                                             trackItemItem,
-                                                            r'''$.explicit''',
-                                                          ))
-                                                            Icon(
-                                                              Icons
-                                                                  .explicit_rounded,
-                                                              color: Color(
-                                                                  0xB3745276),
-                                                              size: 20.0,
-                                                            ),
-                                                        ].divide(SizedBox(
-                                                            width: 8.0)),
-                                                      ),
-                                                      Text(
-                                                        getJsonField(
-                                                          trackItemItem,
-                                                          r'''$.artist''',
-                                                        ).toString(),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .interTight(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
+                                                            r'''$.artist''',
+                                                          ).toString(),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .interTight(
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleMedium
@@ -837,171 +824,187 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
                                                                       .titleMedium
                                                                       .fontStyle,
                                                                 ),
-                                                      ),
-                                                    ].divide(
-                                                        SizedBox(height: 8.0)),
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
-                                                    children: [
-                                                      FlutterFlowIconButton(
-                                                        borderRadius: 8.0,
-                                                        buttonSize: 60.0,
-                                                        fillColor: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        icon: Icon(
-                                                          Icons
-                                                              .thumb_down_sharp,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          size: 32.0,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .fontStyle,
+                                                              ),
                                                         ),
-                                                        onPressed: () async {
-                                                          logFirebaseEvent(
-                                                              'GOLDEN_PATH_PAGE_dislike_ON_TAP');
-                                                          logFirebaseEvent(
-                                                              'dislike_swipeable_stack');
-                                                          _model
-                                                              .swipeableStackController
-                                                              .swipeLeft();
-                                                        },
-                                                      ),
-                                                      FlutterFlowIconButton(
-                                                        borderRadius: 8.0,
-                                                        buttonSize: 60.0,
-                                                        fillColor: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        icon: Icon(
-                                                          Icons.open_in_new,
-                                                          color: FlutterFlowTheme
+                                                      ].divide(SizedBox(
+                                                          height: 8.0)),
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: [
+                                                        FlutterFlowIconButton(
+                                                          borderRadius: 8.0,
+                                                          buttonSize: 60.0,
+                                                          fillColor: FlutterFlowTheme
                                                                   .of(context)
-                                                              .info,
-                                                          size: 32.0,
-                                                        ),
-                                                        onPressed: () async {
-                                                          logFirebaseEvent(
-                                                              'GOLDEN_PATH_PAGE_openExternal_ON_TAP');
-                                                          logFirebaseEvent(
-                                                              'openExternal_launch_u_r_l');
-                                                          await launchURL(
-                                                              getJsonField(
-                                                            trackItemItem,
-                                                            r'''$.url''',
-                                                          ).toString());
-                                                        },
-                                                      ),
-                                                      FlutterFlowIconButton(
-                                                        borderRadius: 8.0,
-                                                        buttonSize: 60.0,
-                                                        fillColor: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        icon: Icon(
-                                                          Icons.favorite,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          size: 32.0,
-                                                        ),
-                                                        onPressed: () async {
-                                                          logFirebaseEvent(
-                                                              'GOLDEN_PATH_PAGE_love_ON_TAP');
-                                                          logFirebaseEvent(
-                                                              'love_backend_call');
-
-                                                          await LikedSongsRecord
-                                                              .collection
-                                                              .doc()
-                                                              .set(
-                                                                  createLikedSongsRecordData(
-                                                                coverArt:
-                                                                    getJsonField(
-                                                                  trackItemItem,
-                                                                  r'''$.image''',
-                                                                ).toString(),
-                                                                songTitle:
-                                                                    getJsonField(
-                                                                  trackItemItem,
-                                                                  r'''$.track''',
-                                                                ).toString(),
-                                                                artist:
-                                                                    getJsonField(
-                                                                  trackItemItem,
-                                                                  r'''$.artist''',
-                                                                ).toString(),
-                                                                user:
-                                                                    currentUserReference,
-                                                              ));
-                                                          logFirebaseEvent(
-                                                              'love_swipeable_stack');
-                                                          _model
-                                                              .swipeableStackController
-                                                              .swipeRight();
-                                                          logFirebaseEvent(
-                                                              'love_update_app_state');
-                                                          FFAppState()
-                                                                  .numSwipes =
-                                                              FFAppState()
-                                                                      .numSwipes +
-                                                                  1;
-                                                          safeSetState(() {});
-                                                          if (FFAppState()
-                                                                  .numSwipes ==
-                                                              5) {
+                                                              .secondaryBackground,
+                                                          icon: Icon(
+                                                            Icons
+                                                                .thumb_down_sharp,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            size: 32.0,
+                                                          ),
+                                                          onPressed: () async {
                                                             logFirebaseEvent(
-                                                                'love_bottom_sheet');
-                                                            await showModalBottomSheet(
-                                                              isScrollControlled:
-                                                                  true,
-                                                              backgroundColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              isDismissible:
-                                                                  false,
-                                                              enableDrag: false,
-                                                              context: context,
-                                                              builder:
-                                                                  (context) {
-                                                                return WebViewAware(
-                                                                  child:
-                                                                      GestureDetector(
-                                                                    onTap: () {
-                                                                      FocusScope.of(
-                                                                              context)
-                                                                          .unfocus();
-                                                                      FocusManager
-                                                                          .instance
-                                                                          .primaryFocus
-                                                                          ?.unfocus();
-                                                                    },
+                                                                'GOLDEN_PATH_PAGE_dislike_ON_TAP');
+                                                            logFirebaseEvent(
+                                                                'dislike_swipeable_stack');
+                                                            _model
+                                                                .swipeableStackController
+                                                                .swipeLeft();
+                                                          },
+                                                        ),
+                                                        FlutterFlowIconButton(
+                                                          borderRadius: 8.0,
+                                                          buttonSize: 60.0,
+                                                          fillColor: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          icon: Icon(
+                                                            Icons.open_in_new,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            size: 32.0,
+                                                          ),
+                                                          onPressed: () async {
+                                                            logFirebaseEvent(
+                                                                'GOLDEN_PATH_PAGE_openExternal_ON_TAP');
+                                                            logFirebaseEvent(
+                                                                'openExternal_launch_u_r_l');
+                                                            await launchURL(
+                                                                getJsonField(
+                                                              trackItemItem,
+                                                              r'''$.url''',
+                                                            ).toString());
+                                                          },
+                                                        ),
+                                                        FlutterFlowIconButton(
+                                                          borderRadius: 8.0,
+                                                          buttonSize: 60.0,
+                                                          fillColor: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          icon: Icon(
+                                                            Icons.favorite,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            size: 32.0,
+                                                          ),
+                                                          onPressed: () async {
+                                                            logFirebaseEvent(
+                                                                'GOLDEN_PATH_PAGE_love_ON_TAP');
+                                                            logFirebaseEvent(
+                                                                'love_backend_call');
+
+                                                            await LikedSongsRecord
+                                                                .collection
+                                                                .doc()
+                                                                .set(
+                                                                    createLikedSongsRecordData(
+                                                                  coverArt:
+                                                                      getJsonField(
+                                                                    trackItemItem,
+                                                                    r'''$.image''',
+                                                                  ).toString(),
+                                                                  songTitle:
+                                                                      getJsonField(
+                                                                    trackItemItem,
+                                                                    r'''$.track''',
+                                                                  ).toString(),
+                                                                  artist:
+                                                                      getJsonField(
+                                                                    trackItemItem,
+                                                                    r'''$.artist''',
+                                                                  ).toString(),
+                                                                  user:
+                                                                      currentUserReference,
+                                                                ));
+                                                            logFirebaseEvent(
+                                                                'love_swipeable_stack');
+                                                            _model
+                                                                .swipeableStackController
+                                                                .swipeRight();
+                                                            logFirebaseEvent(
+                                                                'love_update_app_state');
+                                                            FFAppState()
+                                                                    .numSwipes =
+                                                                FFAppState()
+                                                                        .numSwipes +
+                                                                    1;
+                                                            safeSetState(() {});
+                                                            if (FFAppState()
+                                                                    .numSwipes ==
+                                                                5) {
+                                                              logFirebaseEvent(
+                                                                  'love_bottom_sheet');
+                                                              await showModalBottomSheet(
+                                                                isScrollControlled:
+                                                                    true,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                isDismissible:
+                                                                    false,
+                                                                enableDrag:
+                                                                    false,
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (context) {
+                                                                  return WebViewAware(
                                                                     child:
-                                                                        Padding(
-                                                                      padding: MediaQuery
-                                                                          .viewInsetsOf(
-                                                                              context),
+                                                                        GestureDetector(
+                                                                      onTap:
+                                                                          () {
+                                                                        FocusScope.of(context)
+                                                                            .unfocus();
+                                                                        FocusManager
+                                                                            .instance
+                                                                            .primaryFocus
+                                                                            ?.unfocus();
+                                                                      },
                                                                       child:
-                                                                          NpsWidget(),
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            NpsWidget(),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                );
-                                                              },
-                                                            ).then((value) =>
-                                                                safeSetState(
-                                                                    () {}));
-                                                          }
-                                                        },
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ].divide(
-                                                    SizedBox(height: 30.0)),
+                                                                  );
+                                                                },
+                                                              ).then((value) =>
+                                                                  safeSetState(
+                                                                      () {}));
+                                                            }
+                                                          },
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(height: 30.0)),
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -1076,7 +1079,7 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
                                       ),
                                 ),
                               ),
-                            if (FFDevEnvironmentValues().showAds)
+                            if (false)
                               Align(
                                 alignment: AlignmentDirectional(0.0, 1.0),
                                 child: FlutterFlowAdBanner(

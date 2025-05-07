@@ -95,7 +95,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
             alignment: AlignmentDirectional(0.0, 0.0),
             child: Container(
               constraints: BoxConstraints(
-                maxWidth: 400.0,
+                maxWidth: 600.0,
               ),
               decoration: BoxDecoration(),
               alignment: AlignmentDirectional(0.0, 0.0),

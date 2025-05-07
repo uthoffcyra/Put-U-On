@@ -88,7 +88,8 @@ class GoldenPathModel extends FlutterFlowModel<GoldenPathWidget> {
       );
 
       if ((apiResult8nx.succeeded ?? true)) {
-        logFirebaseEvent('refreshRecommended_update_page_state');
+        // Set recommendations list.
+        logFirebaseEvent('refreshRecommended_Setrecommendationslis');
         recommendations = getJsonField(
           (apiResult8nx.jsonBody ?? ''),
           r'''$.recommendations''',
@@ -97,11 +98,13 @@ class GoldenPathModel extends FlutterFlowModel<GoldenPathWidget> {
             .toList()
             .cast<dynamic>();
         if (!(recommendations.isNotEmpty)) {
-          logFirebaseEvent('refreshRecommended_action_block');
+          // Loops.
+          logFirebaseEvent('refreshRecommended_Loops');
           await refreshRecommended(context);
         }
       } else {
-        logFirebaseEvent('refreshRecommended_show_snack_bar');
+        // Show error.
+        logFirebaseEvent('refreshRecommended_Showerror');
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
