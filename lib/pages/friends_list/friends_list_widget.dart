@@ -575,6 +575,9 @@ class _FriendsListWidgetState extends State<FriendsListWidget> {
                                                 ),
                                               });
                                               logFirebaseEvent(
+                                                  'IconButton_google_analytics_event');
+                                              logFirebaseEvent('follow_user');
+                                              logFirebaseEvent(
                                                   'IconButton_show_snack_bar');
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(

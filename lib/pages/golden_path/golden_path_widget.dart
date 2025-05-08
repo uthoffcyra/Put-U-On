@@ -384,6 +384,9 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
                                             _model.sessionSwipes + 1;
                                         _model.showVideo = false;
                                         logFirebaseEvent(
+                                            'SwipeableStack_google_analytics_event');
+                                        logFirebaseEvent('track_swipe');
+                                        logFirebaseEvent(
                                             'SwipeableStack_action_block');
                                         unawaited(
                                           () async {
@@ -455,6 +458,9 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
                                             },
                                           ),
                                         });
+                                        logFirebaseEvent(
+                                            'SwipeableStack_google_analytics_event');
+                                        logFirebaseEvent('track_like');
                                         // Update taste profile.
                                         logFirebaseEvent(
                                             'SwipeableStack_Updatetasteprofile');
@@ -648,6 +654,10 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
                                                                           ).toString()}',
                                                                         );
 
+                                                                        logFirebaseEvent(
+                                                                            'PlayButton_google_analytics_event');
+                                                                        logFirebaseEvent(
+                                                                            'play_song');
                                                                         if ((_model.youtubeButton?.succeeded ??
                                                                             true)) {
                                                                           logFirebaseEvent(
@@ -940,6 +950,10 @@ class _GoldenPathWidgetState extends State<GoldenPathWidget>
                                                                   user:
                                                                       currentUserReference,
                                                                 ));
+                                                            logFirebaseEvent(
+                                                                'love_google_analytics_event');
+                                                            logFirebaseEvent(
+                                                                'tlike');
                                                             logFirebaseEvent(
                                                                 'love_swipeable_stack');
                                                             _model

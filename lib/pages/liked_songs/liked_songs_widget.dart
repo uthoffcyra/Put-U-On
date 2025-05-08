@@ -302,6 +302,9 @@ class _LikedSongsWidgetState extends State<LikedSongsWidget> {
                                                     },
                                                   ),
                                                 });
+                                                logFirebaseEvent(
+                                                    'IconButton_google_analytics_event');
+                                                logFirebaseEvent('track_share');
                                               }
                                             },
                                           ),
